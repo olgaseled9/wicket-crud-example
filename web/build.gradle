@@ -1,0 +1,49 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.bmuschko:gradle-tomcat-plugin:2.7.0"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: "com.bmuschko.tomcat"
+
+tomcat {
+    httpPort = 8080
+    stopPort = 8081
+    httpsPort = 8443
+    ajpPort = 8009
+    contextPath = '/'
+}
+
+group 'by.seledtsovaos'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.apache.wicket', name: 'wicket-core', version: '9.10.0'
+
+    def tomcatVersion = '8.0.42'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+        "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
+        "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+sourceSets {
+    main {
+        resources {
+            srcDirs += ['src/main/java']
+            includes = ["**"]
+        }
+    }
+}
+
+    compileJava.options.encoding = 'UTF-8'

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="utf-8"/>
+    <title>Редактирование отдела</title>
+    <wicket:link>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </wicket:link>
+</head>
+<body>
+<h2>Редактирование отдела</h2>
+<div wicket:id="feedbackMessage"></div>
+<form wicket:id="form">
+    <div>
+        <label>Наименование отдела
+            <input wicket:id="name" type="text">
+        </label>
+    </div>
+    <button wicket:id="submit">Сохранить</button>
+    <button wicket:id="cancel">Отмена</button>
+</form>
+</body>
+</html>

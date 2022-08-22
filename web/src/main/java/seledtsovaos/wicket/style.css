@@ -1,0 +1,53 @@
+
+body {
+    margin: 0 auto;
+    padding: 10px;
+    font-family: Calibri, sans-serif;
+    font-size: 200%
+}
+
+h2 {
+    color: green;
+}
+
+h1 {
+    color: green;
+}
+
+input {
+    width: 275px;
+    display: flex;
+    border: 1px solid #999;
+    height: 25px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    height: 25px;
+    width: 80px
+}
+
+td {
+    font-size: 20px;
+    word-break: break-all
+}
+
+table {
+    font-size: 20px;
+    border: lightgray;
+}
+
+p {
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+b {
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    color: black;
+}
+
+
+

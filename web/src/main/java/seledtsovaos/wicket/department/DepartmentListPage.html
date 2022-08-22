@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html lang="en" xmlns:wicket="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Список отделов</title>
+    <wicket:link>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+    </wicket:link>
+</head>
+<body>
+<h2>Список отделов</h2>
+<a href="" wicket:id="addNewDepartment">Добавить отдел</a>
+<table>
+    <tr>
+        <th>Наименование отдела</th>
+    </tr>
+    <tr wicket:id="departmentList">
+        <td wicket:id="name" class="table-value">name</td>
+        <td><a href="" wicket:id="edit">Изменить</a></td>
+        <td><a href="" wicket:id="delete">Удалить</a></td>
+    </tr>
+</table>
+</body>
+</html>
