@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Произошла ошибка</title>
+    <wicket:link>
+        <link rel="stylesheet" href="style.css">
+    </wicket:link>
+</head>
+<body>
+<h2 wicket:id="error"></h2>
+<p wicket:id="stackTrace"></p>
+</body>
+<button type="button" onclick="goBack()">Back</button>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+</html>

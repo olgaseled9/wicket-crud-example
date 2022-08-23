@@ -3,6 +3,10 @@ package seledtsovaos.model;
 import java.io.Serializable;
 import java.util.Objects;
 
+/**
+ * Container for Department entity data, getter and setter methods.
+ * @see Department
+ */
 public class Department implements Serializable {
 
     Long id;

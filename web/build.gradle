@@ -6,12 +6,15 @@ buildscript {
     }
     dependencies {
         classpath "com.bmuschko:gradle-tomcat-plugin:2.7.0"
+        classpath "edu.umich.med.michr:h2-gradle-plugin:1.0.1"
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'war'
 apply plugin: "com.bmuschko.tomcat"
+apply plugin: "edu.umich.med.michr.h2-plugin"
+apply plugin: 'checkstyle'
 
 tomcat {
     httpPort = 8080
@@ -30,7 +33,8 @@ repositories {
 
 dependencies {
     implementation group: 'org.apache.wicket', name: 'wicket-core', version: '9.10.0'
-
+    implementation group: 'com.h2database', name: 'h2', version: '2.1.214'
+    implementation group: 'com.h2database', name: 'h2', version: '2.1.214'
     def tomcatVersion = '8.0.42'
     tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
         "org.apache.tomcat.embed:tomcat-embed-logging-juli:${tomcatVersion}",
@@ -46,4 +50,44 @@ sourceSets {
     }
 }
 
-    compileJava.options.encoding = 'UTF-8'
+compileJava.options.encoding = 'UTF-8'
+/**
+ * Runs scripts to create tables in the database.
+ */
+task createSql {
+    group "Database"
+    description "Creates table in database."
+    doLast {
+        def driverName = 'org.h2.Driver';
+        ant.sql(classpath: configurations.runtimeClasspath.asPath,
+            driver: driverName,
+            url: 'jdbc:h2:~/test',
+            userid: 'SA',
+            password: '') {
+            fileset(file: 'src/main/resources/create.sql')
+        }
+    }
+}
+/**
+ * Runs scripts to drop tables in the database.
+ */
+task dropSql {
+    group "Database"
+    description "Creates table in database."
+    doLast {
+        def driverName = 'org.h2.Driver';
+        ant.sql(classpath: configurations.runtimeClasspath.asPath,
+            driver: driverName,
+            url: 'jdbc:h2:~/test',
+            userid: 'SA',
+            password: '') {
+            fileset(file: 'src/main/resources/drop.sql')
+        }
+    }
+}
+
+checkstyle {
+    toolVersion = '7.1.1'
+    configFile = file("${rootProject.projectDir}/config/checkstyle/checkstyle.xml")
+    ignoreFailures = false
+}

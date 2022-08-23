@@ -12,7 +12,9 @@ import seledtsovaos.dto.DepartmentDto;
 import seledtsovaos.service.impl.DepartmentServiceImpl;
 import seledtsovaos.wicket.listmodel.DepartmentListModel;
 
-
+/**
+ * Department ListPage
+ */
 public class DepartmentListPage extends WebPage {
 
     public DepartmentListPage() {

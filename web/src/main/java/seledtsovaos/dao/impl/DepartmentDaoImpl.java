@@ -17,7 +17,9 @@ import seledtsovaos.dao.GenericDao;
 import seledtsovaos.exception.DaoException;
 import seledtsovaos.model.Department;
 
-
+/**
+ * Implementation of {@link DepartmentDao} interface.
+ */
 public class DepartmentDaoImpl implements DepartmentDao {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(DepartmentDaoImpl.class);

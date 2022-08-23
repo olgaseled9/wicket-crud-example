@@ -7,7 +7,11 @@ import java.util.List;
 
 import seledtsovaos.exception.DaoException;
 
-
+/**
+ *  Handles  all database operations with object.
+ * @param <I> type
+ * @param <T> entity
+ */
 public interface GenericDao<I, T> {
 
     void add(T entity);

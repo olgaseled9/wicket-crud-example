@@ -1,9 +1,12 @@
-package seledtsovaos.converters.Impl;
+package seledtsovaos.converters.impl;
 
 import seledtsovaos.converters.DepartmentConverter;
 import seledtsovaos.dto.DepartmentDto;
 import seledtsovaos.model.Department;
 
+/**
+ * Implementation of {@link DepartmentConverter} interface.
+ */
 public class DepartmentConverterImpl implements DepartmentConverter {
 
     @Override

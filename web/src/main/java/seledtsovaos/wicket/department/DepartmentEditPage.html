@@ -19,6 +19,16 @@
     </div>
     <button wicket:id="submit">Сохранить</button>
     <button wicket:id="cancel">Отмена</button>
+    <script>
+        document.querySelectorAll('event').forEach(event => {
+            event.addEventListener('submit', (e) => {
+                if (event.classList.contains('is-submitting')) {
+                    e.preventDefault();
+                }
+                event.classList.add('is-submitting');
+            });
+        });
+    </script>
 </form>
 </body>
 </html>

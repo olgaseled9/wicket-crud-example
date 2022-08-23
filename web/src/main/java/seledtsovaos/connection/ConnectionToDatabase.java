@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import seledtsovaos.exception.DaoException;
 
-
 /**
  * Creates connection to a data source.
  */

@@ -1,5 +1,7 @@
 package seledtsovaos.exception;
-
+/**
+ * Thrown if it is not possible to do crud operations.
+ */
 public class DaoException extends RuntimeException {
 
 

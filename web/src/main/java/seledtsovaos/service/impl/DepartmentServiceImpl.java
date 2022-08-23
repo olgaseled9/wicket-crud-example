@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import seledtsovaos.converters.DepartmentConverter;
-import seledtsovaos.converters.Impl.DepartmentConverterImpl;
+import seledtsovaos.converters.impl.DepartmentConverterImpl;
 import seledtsovaos.dao.DepartmentDao;
 import seledtsovaos.dao.impl.DepartmentDaoImpl;
 import seledtsovaos.dto.DepartmentDto;
@@ -13,6 +13,9 @@ import seledtsovaos.exception.ServiceException;
 import seledtsovaos.model.Department;
 import seledtsovaos.service.DepartmentService;
 
+/**
+ * Implementation of {@link DepartmentService} interface.
+ */
 public class DepartmentServiceImpl implements DepartmentService {
 
     private final DepartmentDao departmentDao = new DepartmentDaoImpl();
